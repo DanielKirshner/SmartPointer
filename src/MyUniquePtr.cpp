@@ -5,7 +5,7 @@ MyUniquePtr::MyUniquePtr()
     _pointer = nullptr;
 }
 
-MyUniquePtr::MyUniquePtr(void* pointer)
+MyUniquePtr::MyUniquePtr(int* pointer)
 {
     _pointer = pointer;
 }
@@ -16,13 +16,26 @@ MyUniquePtr::MyUniquePtr(MyUniquePtr&& other)
     other._pointer = nullptr;
 }
 
-// void operator=(const MyUniquePtr&& other)
-// {
-//     _pointer = other._pointer;
-//     other._pointer = nullptr;
-// }
+void MyUniquePtr::operator=(MyUniquePtr&& other)
+{
+    _pointer = other._pointer;
+    other._pointer = nullptr;
+}
+
+int& MyUniquePtr::operator*()
+{
+    return *((int*)_pointer);
+}
+
+int* MyUniquePtr::operator->()
+{
+    return _pointer;
+}
 
 MyUniquePtr::~MyUniquePtr()
 {
-    delete [] _pointer;
+    if(_pointer != nullptr)
+    {
+        delete [] _pointer;
+    }
 }

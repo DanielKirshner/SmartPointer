@@ -4,15 +4,19 @@ class MyUniquePtr final
 {
     private:
         explicit MyUniquePtr();
-        explicit MyUniquePtr(void* pointer);    
+        explicit MyUniquePtr(int* pointer);    
         ~MyUniquePtr();
     
     private:
-        void* _pointer;
+        int* _pointer;
     
     public:
         MyUniquePtr(MyUniquePtr&& other);
-        // MyUniquePtr operator=(const MyUniquePtr&& other);
+        void operator=(MyUniquePtr&& other);
+    
+    public:
+        int& operator*();
+        int* operator->();
 
     public:
         MyUniquePtr(const MyUniquePtr& other) = delete;
