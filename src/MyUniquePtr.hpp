@@ -16,7 +16,6 @@ class MyUniquePtr final
     
     public:
         int& operator*();
-        int* operator->();
 
     public:
         MyUniquePtr(const MyUniquePtr& other) = delete;

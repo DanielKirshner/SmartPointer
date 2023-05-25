@@ -27,11 +27,6 @@ int& MyUniquePtr::operator*()
     return *((int*)_pointer);
 }
 
-int* MyUniquePtr::operator->()
-{
-    return _pointer;
-}
-
 MyUniquePtr::~MyUniquePtr()
 {
     if(_pointer != nullptr)
