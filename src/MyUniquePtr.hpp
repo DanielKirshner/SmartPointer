@@ -3,12 +3,12 @@
 class MyUniquePtr final
 {
     private:
+        int* _pointer;
+    
+    public:
         explicit MyUniquePtr();
         explicit MyUniquePtr(int* pointer);    
         ~MyUniquePtr();
-    
-    private:
-        int* _pointer;
     
     public:
         MyUniquePtr(MyUniquePtr&& other);

@@ -3,8 +3,18 @@
 
 int main()
 {
-    MyUniquePtr ptr1(); // default c'tor
-    // MyUniquePtr ptr2(ptr1); // error, deleted copy c'tor
+    MyUniquePtr ptr1; // default c'tor
+    
+    int* x = new int(5);
+    std::cout << *x << std::endl;
+    
+
+    {
+        MyUniquePtr ptr4(x); 
+        std::cout << *ptr4 << std::endl;
+    }
+    std::cout << *x << std::endl;
+
 
     return EXIT_SUCCESS;
 }
