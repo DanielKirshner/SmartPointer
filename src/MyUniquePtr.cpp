@@ -2,12 +2,12 @@
 
 MyUniquePtr::MyUniquePtr()
 {
-    this->_pointer = nullptr;
+    _pointer = nullptr;
 }
 
 MyUniquePtr::MyUniquePtr(void* pointer)
 {
-    this->_pointer = pointer;
+    _pointer = pointer;
 }
 
 MyUniquePtr::~MyUniquePtr()
