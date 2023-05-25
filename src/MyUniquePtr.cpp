@@ -31,6 +31,6 @@ MyUniquePtr::~MyUniquePtr()
 {
     if(_pointer != nullptr)
     {
-        delete [] _pointer;
+        delete _pointer;
     }
 }
