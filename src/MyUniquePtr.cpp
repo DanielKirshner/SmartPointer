@@ -12,5 +12,5 @@ MyUniquePtr::MyUniquePtr(void* pointer)
 
 MyUniquePtr::~MyUniquePtr()
 {
-    
+    delete [] _pointer;
 }

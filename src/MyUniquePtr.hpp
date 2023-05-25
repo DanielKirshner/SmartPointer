@@ -1,6 +1,6 @@
 #pragma once
 
-class MyUniquePtr
+class MyUniquePtr final
 {
     private:
         explicit MyUniquePtr();
