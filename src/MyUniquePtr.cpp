@@ -29,8 +29,13 @@ int& MyUniquePtr::operator*()
 
 MyUniquePtr::~MyUniquePtr()
 {
-    if(_pointer != nullptr)
+    try
     {
-        delete _pointer;
+        if(_pointer != nullptr)
+        {
+            delete _pointer;
+        }   
     }
+    catch(...)
+    {}
 }
