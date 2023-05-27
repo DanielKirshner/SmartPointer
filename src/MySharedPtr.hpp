@@ -8,6 +8,7 @@ class MySharedPtr final
     private: uint* _ref_count;
     
     public: explicit MySharedPtr();
+    public: explicit MySharedPtr(int* ptr);
     public: MySharedPtr(const MySharedPtr& other);
     public: MySharedPtr(MySharedPtr&& other);
     

@@ -4,6 +4,10 @@ MySharedPtr::MySharedPtr()
     : _ptr(nullptr), _ref_count(new uint(0)) 
 {}
 
+MySharedPtr::MySharedPtr(int* ptr)
+    : _ptr(ptr), _ref_count(new uint(1))
+{}
+
 MySharedPtr::MySharedPtr(const MySharedPtr& other)
 {
     _ptr = other._ptr;
