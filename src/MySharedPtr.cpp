@@ -39,3 +39,13 @@ void MySharedPtr::operator=(MySharedPtr&& other)
     other._ptr = nullptr;
     other._ref_count = nullptr;
 }
+
+uint MySharedPtr::get_count() const
+{
+    return *_ref_count;
+}
+
+int* MySharedPtr::get_ptr() const
+{
+    return _ptr;
+}

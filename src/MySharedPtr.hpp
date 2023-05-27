@@ -13,4 +13,7 @@ class MySharedPtr final
     
     public: void operator=(const MySharedPtr& other);
     public: void operator=(MySharedPtr&& other);
+
+    public: uint get_count() const;
+    public: int* get_ptr() const;
 };
