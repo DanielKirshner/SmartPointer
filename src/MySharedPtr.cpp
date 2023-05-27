@@ -13,3 +13,13 @@ MySharedPtr::MySharedPtr(const MySharedPtr& other)
         *ref_count++;
     }
 }
+
+MySharedPtr& MySharedPtr::operator=(const MySharedPtr& other)
+{
+    ptr = other.ptr;
+    ref_count = other.ref_count;
+    if (other.ref_count != nullptr)
+    {
+        *ref_count++;
+    }
+}

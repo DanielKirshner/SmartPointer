@@ -9,4 +9,7 @@ class MySharedPtr final
     
     public:
         MySharedPtr(const MySharedPtr& other);
+    
+    public:
+        MySharedPtr& operator=(const MySharedPtr& other);
 };
