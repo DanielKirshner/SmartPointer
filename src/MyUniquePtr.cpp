@@ -1,14 +1,12 @@
 #include "MyUniquePtr.hpp"
 
 MyUniquePtr::MyUniquePtr()
-{
-    _pointer = nullptr;
-}
+    : _pointer(nullptr)
+{}
 
 MyUniquePtr::MyUniquePtr(int* pointer)
-{
-    _pointer = pointer;
-}
+    : _pointer(pointer)
+{}
 
 MyUniquePtr::MyUniquePtr(MyUniquePtr&& other)
 {
