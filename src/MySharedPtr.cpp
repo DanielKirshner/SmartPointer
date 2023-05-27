@@ -53,3 +53,19 @@ int* MySharedPtr::get_ptr() const
 {
     return _ptr;
 }
+
+MySharedPtr::~MySharedPtr()
+{
+    try
+    {
+        (*_ref_count)--;
+        if (*_ref_count == 0)
+        {
+            if (_ptr != nullptr)
+                delete _ptr;
+            delete _ref_count;
+        }
+    }
+    catch(...)
+    {}
+}

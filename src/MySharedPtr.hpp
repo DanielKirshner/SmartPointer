@@ -17,4 +17,6 @@ class MySharedPtr final
 
     public: uint get_count() const;
     public: int* get_ptr() const;
+
+    public: ~MySharedPtr();
 };

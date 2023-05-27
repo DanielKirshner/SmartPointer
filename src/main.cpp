@@ -17,6 +17,8 @@ int main()
     }
     std::cout << *x << std::endl;
 
+    MySharedPtr shared_p1(new int(5));
+    std::cout << shared_p1.get_count() << std::endl;
 
     return EXIT_SUCCESS;
 }
