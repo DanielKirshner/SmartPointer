@@ -2,22 +2,17 @@
 
 class MyUniquePtr final
 {
-    private:
-        int* _pointer;
+    private: int* _pointer;
     
-    public:
-        explicit MyUniquePtr();
-        explicit MyUniquePtr(int* pointer);    
-        ~MyUniquePtr();
+    public: explicit MyUniquePtr();
+    public: explicit MyUniquePtr(int* pointer);    
+    public: MyUniquePtr(MyUniquePtr&& other);
     
-    public:
-        MyUniquePtr(MyUniquePtr&& other);
-        void operator=(MyUniquePtr&& other);
-    
-    public:
-        int& operator*();
+    public: void operator=(MyUniquePtr&& other);
+    public: int& operator*();
 
-    public:
-        MyUniquePtr(const MyUniquePtr& other) = delete;
-        void operator=(const MyUniquePtr& other) = delete;
+    public: MyUniquePtr(const MyUniquePtr& other) = delete;
+    public: void operator=(const MyUniquePtr& other) = delete;
+    
+    public: ~MyUniquePtr();
 };
