@@ -6,4 +6,7 @@ class MySharedPtr final
     
     public:
         explicit MySharedPtr();
+    
+    public:
+        MySharedPtr(const MySharedPtr& other);
 };
