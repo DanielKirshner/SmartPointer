@@ -9,6 +9,8 @@ class MySharedPtr final
     
     public: explicit MySharedPtr();
     public: MySharedPtr(const MySharedPtr& other);
+    public: MySharedPtr(MySharedPtr&& other);
     
     public: void operator=(const MySharedPtr& other);
+    public: void operator=(MySharedPtr&& other);
 };
