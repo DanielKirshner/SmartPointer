@@ -14,7 +14,7 @@ MySharedPtr::MySharedPtr(const MySharedPtr& other)
     _ref_count = other._ref_count;
     if (other._ref_count != nullptr)
     {
-        *_ref_count++;
+        (*_ref_count)++;
     }
 }
 
@@ -24,7 +24,7 @@ void MySharedPtr::operator=(const MySharedPtr& other)
     _ref_count = other._ref_count;
     if (other._ref_count != nullptr)
     {
-        *_ref_count++;
+        (*_ref_count)++;
     }
 }
 
