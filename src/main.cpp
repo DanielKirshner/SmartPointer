@@ -1,4 +1,6 @@
 #include "MyUniquePtr.hpp"
+#include "MySharedPtr.hpp"
+
 #include <iostream>
 
 int main()

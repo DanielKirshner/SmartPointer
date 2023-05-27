@@ -1,25 +1,25 @@
 #include "MySharedPtr.hpp"
 
 MySharedPtr::MySharedPtr()
-    : ptr(nullptr), ref_count(new size_t(0)) 
+    : _ptr(nullptr), _ref_count(new uint(0)) 
 {}
 
 MySharedPtr::MySharedPtr(const MySharedPtr& other)
 {
-    ptr = other.ptr;
-    ref_count = other.ref_count;
-    if (other.ref_count != nullptr)
+    _ptr = other._ptr;
+    _ref_count = other._ref_count;
+    if (other._ref_count != nullptr)
     {
-        *ref_count++;
+        *_ref_count++;
     }
 }
 
-MySharedPtr& MySharedPtr::operator=(const MySharedPtr& other)
+void MySharedPtr::operator=(const MySharedPtr& other)
 {
-    ptr = other.ptr;
-    ref_count = other.ref_count;
-    if (other.ref_count != nullptr)
+    _ptr = other._ptr;
+    _ref_count = other._ref_count;
+    if (other._ref_count != nullptr)
     {
-        *ref_count++;
+        *_ref_count++;
     }
 }

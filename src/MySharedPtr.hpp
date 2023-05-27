@@ -1,8 +1,11 @@
+#pragma once
+
+typedef unsigned int uint;
 class MySharedPtr final
 {
     private:
-        int* ptr;
-        size_t* ref_count;
+        int* _ptr;
+        uint* _ref_count;
     
     public:
         explicit MySharedPtr();
@@ -11,5 +14,5 @@ class MySharedPtr final
         MySharedPtr(const MySharedPtr& other);
     
     public:
-        MySharedPtr& operator=(const MySharedPtr& other);
+        void operator=(const MySharedPtr& other);
 };
