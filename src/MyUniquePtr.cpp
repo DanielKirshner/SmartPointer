@@ -20,7 +20,7 @@ void MyUniquePtr::operator=(MyUniquePtr&& other)
     other._pointer = nullptr;
 }
 
-int& MyUniquePtr::operator*()
+int& MyUniquePtr::operator*() const
 {
     return *((int*)_pointer);
 }

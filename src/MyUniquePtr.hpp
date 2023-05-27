@@ -9,7 +9,7 @@ class MyUniquePtr final
     public: MyUniquePtr(MyUniquePtr&& other);
     
     public: void operator=(MyUniquePtr&& other);
-    public: int& operator*();
+    public: int& operator*() const;
 
     public: MyUniquePtr(const MyUniquePtr& other) = delete;
     public: void operator=(const MyUniquePtr& other) = delete;
